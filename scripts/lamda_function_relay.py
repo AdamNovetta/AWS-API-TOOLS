@@ -29,20 +29,22 @@ class call_lambda:
                                             FunctionName=function_name,
                                             InvocationType='RequestResponse',
                                             )
-        data = invoke_response['Payload'].read().decode()[1:-1]
+        data = invoke_response['Payload'].read().decode()
         return(data)
 
 
     # Defines Lambda call that includes a payload
     def payloaded_input(self, function_name, payload):
-        print("- This should be the payload: " + json.dumps(payload))
+        print(">> This should be the payload: " + json.dumps(payload) + "\n")
         invoke_response = call_lambda().lc.invoke(
                                             FunctionName=function_name,
                                             InvocationType='RequestResponse',
-                                            Payload=payload
+                                            Payload=json.dumps(payload)
                                             )
-        data = invoke_response['Payload'].read().decode()[1:-1]
+
+        data = invoke_response['Payload'].read().decode()
         return(data)
+
 
 def get_available_functions():
     AFList = []
@@ -59,17 +61,18 @@ def lambda_handler(event, context):
     if "FunctionPayload" in event:
         pl = event['FunctionPayload']
         print("FunctionName: \n" + fn + "\n")
-        print("Payload: \n" + pl + "\n")
+        print("Payload: \n" + str(pl) + "\n")
     else:
         print("FunctionName: \n" + fn + "\n")
     if fn in List:
-        print("Function: " + fn + " is runnable!")
+        print("Function: " + fn + " is runnable!\n")
         try:
             if pl:
                 data = call_lambda().payloaded_input(fn, pl)
         except:
                 data = call_lambda().no_input(fn)
-        return(data)
+        print(">>> This is the output from the relayed call: " + data + "\n")
+        return(json.loads(data))
     else:
         print("Function: " + fn + " does not exsit or is not runnable...")
         return("Unable to run " + fn)
