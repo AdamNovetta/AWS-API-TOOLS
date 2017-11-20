@@ -1,1 +1,16 @@
-#TODO
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1508855775000",
+            "Effect": "Allow",
+            "Action": [
+                "lambda:GetFunction",
+                "lambda:InvokeFunction"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
