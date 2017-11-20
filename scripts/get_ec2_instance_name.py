@@ -1,8 +1,19 @@
 #!/usr/bin/env python
 import boto3
+import logging
 
 
-# Main function - returns EC2 Instance name, given a region and ID
+# Program meta
+vers = "1.0"
+ProgramName = "get_ec2_instance_name"
+
+
+# Output logging - default WARNING. Set to INFO for full output in cloudwatch
+logger = logging.getLogger()
+logger.setLevel(logging.WARNING)
+
+
+# Main function returns the EC2 instance name given an instance ID
 def lambda_handler(event, context):
     InstanceName = ''
     UnNamedLabel = "no name?"

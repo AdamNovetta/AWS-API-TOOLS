@@ -1,11 +1,19 @@
 #!/usr/bin/env python
 import boto3
+import logging
 
 
+# Program meta
+vers = "1.0"
+ProgramName = "get_account_name"
+
+
+# Define boto3 connections/variables
 IAMClient = boto3.client('iam')
 paginator = IAMClient.get_paginator('list_account_aliases')
 
 
+# Main function returns the name(s) for this AWS account
 def lambda_handler(event, context):
     for response in paginator.paginate():
         AccountAliases = response['AccountAliases']

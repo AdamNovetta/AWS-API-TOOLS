@@ -5,7 +5,10 @@
             "Sid": "Stmt1510080973000",
             "Effect": "Allow",
             "Action": [
-                "s3:GetBucketAcl"
+                "s3:GetBucketAcl",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:HeadBucket"
             ],
             "Resource": [
                 "*"

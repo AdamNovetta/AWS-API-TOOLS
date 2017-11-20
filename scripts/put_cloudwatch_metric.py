@@ -1,5 +1,17 @@
 #!/usr/bin/env python
 import boto3
+import logging
+
+
+# Program meta
+vers = "1.0"
+ProgramName = "put_cloudwatch_metric"
+
+
+# Output logging - default WARNING. Set to INFO for full output in cloudwatch
+logger = logging.getLogger()
+logger.setLevel(logging.WARNING)
+
 
 # define boto3 connections
 cw = boto3.client('cloudwatch')

@@ -4,6 +4,11 @@ import boto3
 import logging
 
 
+# Program meta
+vers = "1.0"
+ProgramName = "get_open_s3_object_permissions"
+
+
 # Output logging - default WARNING. Set to INFO for full output in cloudwatch
 logger = logging.getLogger()
 logger.setLevel(logging.WARNING)

@@ -2,7 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "Stmt1508858733000",
+            "Sid": "AllowLookupAccountID",
             "Effect": "Allow",
             "Action": [
                 "sts:DecodeAuthorizationMessage"

@@ -2,7 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "Stmt1510080687000",
+            "Sid": "AllowSNSPublic",
             "Effect": "Allow",
             "Action": [
                 "sns:Publish"

@@ -4,11 +4,16 @@ import boto3
 import logging
 
 
+# Program meta
+vers = "1.0"
+ProgramName = "get_all_s3_bucket_names"
+
+
 # Define boto3 connections/variables
 S3Client = boto3.client('s3')
 
 
-# Get all bucket names
+# Get all S3 bucket names
 def lambda_handler(event, context):
     S3Buckets = S3Client.list_buckets()
     AllBucketNames = []
