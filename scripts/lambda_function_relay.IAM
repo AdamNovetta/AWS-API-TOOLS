@@ -2,7 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "Stmt1508855775000",
+            "Sid": "AllowLambdaFunctionRelay",
             "Effect": "Allow",
             "Action": [
                 "lambda:GetFunction",

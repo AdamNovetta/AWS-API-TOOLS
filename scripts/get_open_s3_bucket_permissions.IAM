@@ -2,7 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "Stmt1510080973000",
+            "Sid": "GetOpenS3BucketPermissions",
             "Effect": "Allow",
             "Action": [
                 "s3:GetBucketAcl",
