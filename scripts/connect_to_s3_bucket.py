@@ -14,6 +14,7 @@ logger.setLevel(logging.WARNING)
 # Define boto3 connections/variables
 S3Client = boto3.client('s3')
 
+
 # Main function tries to connect to S3 bucket and returns True/False as result
 def lambda_handler(event, context):
     target = event['BucketName']

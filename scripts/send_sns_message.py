@@ -17,7 +17,7 @@ logger.setLevel(logging.WARNING)
 SNSClient = boto3.client('sns')
 
 
-# Main function sends out SNS message to a given topic, provided the message/sub
+# Main function send out SNS message to a given topic, provided the message/sub
 def lambda_handler(event, context):
     SNSARN = event['SNSARN']
     SNSMessage = event['SNSMessage']

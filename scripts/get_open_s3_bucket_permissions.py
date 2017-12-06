@@ -4,7 +4,7 @@ import boto3
 import logging
 
 
-# Program meta -----------------------------------------------------------------
+# Program meta
 vers = "1.0"
 ProgramName = "get_open_s3_bucket_permissions"
 
@@ -41,10 +41,10 @@ def get_bucket_acl_data(target):
 def audit(acldata):
     Issues = ""
     for grants in acldata:
-      for grantee in grants['Grantee']:
-        if "AllUsers" in grants['Grantee'][grantee]:
+        for grantee in grants['Grantee']:
+            if "AllUsers" in grants['Grantee'][grantee]:
                 Issues = "Everyone"
-        if "AuthenticatedUsers" in grants['Grantee'][grantee]:
+            if "AuthenticatedUsers" in grants['Grantee'][grantee]:
                 Issues = "Any AWS user (not just your account)"
     return(Issues)
 
@@ -53,7 +53,7 @@ def audit(acldata):
 def lambda_handler(event, context):
     bucket = event['BucketName']
     access = connect_to_bucket(bucket)
-    if access == True:
+    if access:
         BucketACL = get_bucket_acl_data(bucket)
         result = audit(BucketACL)
         if result:

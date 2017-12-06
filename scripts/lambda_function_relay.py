@@ -21,10 +21,8 @@ logger.setLevel(logging.WARNING)
 # Class to relay a call to another AWS Lambda function
 class call_lambda:
 
-
-    # New Boto3 connection to lambda, seperating it from the first lambda_client
+    # New Boto3 connection to lambda, seperating from the first lambda_client
     lc = boto3.client('lambda')
-
 
     # Defines Lambda call that doesn't have a payload attached
     def no_input(self, function_name):
@@ -34,7 +32,6 @@ class call_lambda:
                                             )
         data = invoke_response['Payload'].read().decode()
         return(data)
-
 
     # Defines Lambda call that includes a payload
     def payloaded_input(self, function_name, payload):
