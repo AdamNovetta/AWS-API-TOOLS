@@ -61,21 +61,26 @@ def get_available_functions():
 def lambda_handler(event, context):
     fn = str(event['FunctionName'])
     List = get_available_functions()
+
     if "FunctionPayload" in event:
         pl = event['FunctionPayload']
-        print("FunctionName: \n" + fn + "\n")
-        print("Payload: \n" + str(pl) + "\n")
+        print("FunctionName: \n" + fn + "\nPayload: \n" + str(pl) + "\n")
+
     else:
-        print("FunctionName: \n" + fn + "\n")
+        print("[ No payload sent with function: " + fn + " ]\n")
+
     if fn in List:
         print("Function: " + fn + " is runnable!\n")
-        try:
-            if pl:
-                data = call_lambda().payloaded_input(fn, pl)
-        except:
-                data = call_lambda().no_input(fn)
-        print(">>> This is the output from the relayed call: " + data + "\n")
+
+        if pl:
+            data = call_lambda().payloaded_input(fn, pl)
+
+        else:
+            data = call_lambda().no_input(fn)
+
+        print(">>> Output from the relayed call: " + data + "\n")
         return(json.loads(data))
+
     else:
-        print("Function: " + fn + " does not exsit or is not runnable...")
+        print("Function: " + fn + " does not exsit or is not runnable...\n")
         return("Unable to run " + fn)
