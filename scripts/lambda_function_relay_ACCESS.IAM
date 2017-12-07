@@ -2,15 +2,14 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "AllowLambdaFunctionRelay",
+            "Sid": "AllowAccessToLambdaFunctionRelay",
             "Effect": "Allow",
             "Action": [
-                "lambda:ListFunctions",
                 "lambda:GetFunction",
                 "lambda:InvokeFunction"
             ],
             "Resource": [
-                "*"
+                "arn:aws:lambda:*:*:function:lambda_function_relay"
             ]
         }
     ]
