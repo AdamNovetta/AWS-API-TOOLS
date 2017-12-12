@@ -26,8 +26,8 @@ def check_acl_status(target, ParentBucket):
     try:
         object_acl.load()
         acl_data = object_acl.grants
-    except:
-        print("Couldn't load ACL data for " + target)
+    except BaseException as e:
+        print("Couldn't load ACL data for " + target + "\nInfo : " + e)
         acl_data = None
     return acl_data
 
@@ -64,5 +64,5 @@ def lambda_handler(event, context):
     try:
         if result[bucket]:
             return(result[bucket])
-    except:
+    except BaseException as e:
         return(None)

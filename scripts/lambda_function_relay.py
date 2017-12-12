@@ -70,14 +70,10 @@ def lambda_handler(event, context):
         print("[ No payload sent with function: " + fn + " ]\n")
 
     if fn in List:
-        print("Function: " + fn + " is runnable!\n")
-
         if pl:
             data = call_lambda().payloaded_input(fn, pl)
-
         else:
             data = call_lambda().no_input(fn)
-
         print(">>> Output from the relayed call: " + data + "\n")
         return(json.loads(data))
 
