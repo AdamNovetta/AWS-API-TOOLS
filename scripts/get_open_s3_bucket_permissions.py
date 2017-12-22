@@ -25,7 +25,7 @@ def connect_to_bucket(target):
     try:
         S3Client.head_bucket(Bucket=target)
         viewable = True
-    except:
+    except BaseException as e:
         viewable = False
     return viewable
 
