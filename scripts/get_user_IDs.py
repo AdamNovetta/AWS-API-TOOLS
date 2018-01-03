@@ -2,9 +2,6 @@
 import json
 import boto3
 import logging
-import time
-import datetime
-from time import mktime
 
 # Program meta
 vers = "1.0"
