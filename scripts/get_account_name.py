@@ -7,6 +7,9 @@ import logging
 vers = "1.0"
 ProgramName = "get_account_name"
 
+# Output logging - default WARNING. Set to INFO for full output in cloudwatch
+logger = logging.getLogger()
+logger.setLevel(logging.WARNING)
 
 # Define boto3 connections/variables
 IAMClient = boto3.client('iam')

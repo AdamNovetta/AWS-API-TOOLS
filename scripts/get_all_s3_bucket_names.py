@@ -8,6 +8,9 @@ import logging
 vers = "1.0"
 ProgramName = "get_all_s3_bucket_names"
 
+# Output logging - default WARNING. Set to INFO for full output in cloudwatch
+logger = logging.getLogger()
+logger.setLevel(logging.WARNING)
 
 # Define boto3 connections/variables
 S3Client = boto3.client('s3')

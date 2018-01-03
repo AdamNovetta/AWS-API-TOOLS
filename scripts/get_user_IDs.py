@@ -11,9 +11,9 @@ vers = "1.0"
 ProgramName = "get_IAM_user_IDs"
 
 
-# output logging for INFO, to see full output in cloudwatch, default to warning
+# Output logging - default WARNING. Set to INFO for full output in cloudwatch
 logger = logging.getLogger()
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.WARNING)
 
 
 # define boto3 connections/variables
