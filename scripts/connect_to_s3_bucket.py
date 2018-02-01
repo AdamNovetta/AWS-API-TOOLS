@@ -21,6 +21,6 @@ def lambda_handler(event, context):
     try:
         S3Client.head_bucket(Bucket=target)
         viewable = True
-    except:
+    except e as BaseException:
         viewable = False
     return viewable
