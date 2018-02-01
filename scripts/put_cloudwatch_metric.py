@@ -5,7 +5,7 @@ import logging
 
 # Program meta
 vers = "1.0"
-ProgramName = "put_cloudwatch_metric"
+program_name = "put_cloudwatch_metric"
 
 
 # Output logging - default WARNING. Set to INFO for full output in cloudwatch

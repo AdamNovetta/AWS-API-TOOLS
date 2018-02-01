@@ -6,7 +6,7 @@ import logging
 
 # Program meta
 vers = "1.0"
-ProgramName = "get_open_s3_object_permissions"
+program_name = "get_open_s3_object_permissions"
 
 
 # Output logging - default WARNING. Set to INFO for full output in cloudwatch

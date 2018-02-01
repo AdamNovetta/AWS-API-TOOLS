@@ -5,7 +5,7 @@ import logging
 
 # Program meta
 vers = "1.0"
-ProgramName = "lambda_function_relay"
+program_name = "lambda_function_relay"
 
 
 # Output logging - default WARNING. Set to INFO for full output in cloudwatch

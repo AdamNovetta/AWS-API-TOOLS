@@ -5,7 +5,7 @@ import logging
 
 # Program meta
 vers = "1.0"
-ProgramName = "get_account_name"
+program_name = "get_account_name"
 
 # Output logging - default WARNING. Set to INFO for full output in cloudwatch
 logger = logging.getLogger()

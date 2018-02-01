@@ -5,7 +5,7 @@ import logging
 
 # Program meta
 vers = "1.0"
-ProgramName = "get_IAM_user_IDs"
+program_name = "get_IAM_user_IDs"
 
 
 # Output logging - default WARNING. Set to INFO for full output in cloudwatch

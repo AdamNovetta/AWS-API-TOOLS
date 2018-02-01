@@ -6,7 +6,7 @@ import logging
 
 # Program meta
 vers = "1.0"
-ProgramName = "lambda_function_relay"
+program_name = "lambda_function_relay"
 
 
 # Define boto3 connections/variables
@@ -51,7 +51,7 @@ def get_available_functions():
     AFList = []
     AvailableFunctions = lambda_client.list_functions()['Functions']
     for function in AvailableFunctions:
-        if function['FunctionName'] != ProgramName:
+        if function['FunctionName'] != program_name:
             AFList.append(function['FunctionName'])
     return(AFList)
 

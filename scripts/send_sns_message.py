@@ -5,7 +5,7 @@ import logging
 
 # Program meta
 vers = "1.0"
-ProgramName = "send_sns_message"
+program_name = "send_sns_message"
 
 
 # Output logging - default WARNING. Set to INFO for full output in cloudwatch

@@ -6,7 +6,7 @@ import logging
 
 # Program meta
 vers = "1.0"
-ProgramName = "get_all_s3_bucket_names"
+program_name = "get_all_s3_bucket_names"
 
 # Output logging - default WARNING. Set to INFO for full output in cloudwatch
 logger = logging.getLogger()

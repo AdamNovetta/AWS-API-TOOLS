@@ -5,7 +5,7 @@ import logging
 
 # Program meta
 vers = "1.0"
-ProgramName = "get_ec2_instance_name"
+program_name = "get_ec2_instance_name"
 
 
 # Output logging - default WARNING. Set to INFO for full output in cloudwatch
