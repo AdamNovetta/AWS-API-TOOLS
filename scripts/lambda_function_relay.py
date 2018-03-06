@@ -67,6 +67,7 @@ def lambda_handler(event, context):
         print("FunctionName: \n" + fn + "\nPayload: \n" + str(pl) + "\n")
 
     else:
+        pl = None
         print("[ No payload sent with function: " + fn + " ]\n")
 
     if fn in List:
