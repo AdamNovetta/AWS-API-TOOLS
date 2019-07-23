@@ -12,11 +12,6 @@ program_name = "lambda_function_relay"
 logger = logging.getLogger()
 logger.setLevel(logging.WARNING)
 
-
-# Define boto3 connections/variables
-MyAWSID = boto3.client('sts').get_caller_identity().get('Account')
-
-
 # Main function returns the AWS account ID for this account
 def lambda_handler(event, context):
-    return(MyAWSID)
+    return(boto3.client('sts').get_caller_identity().get('Account'))
